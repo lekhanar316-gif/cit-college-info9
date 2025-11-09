@@ -1,6 +1,8 @@
 Flask==3.0.3
 qrcode==7.4.2
-pillow==10.3.0
-gunicorn==21.2.0
-setuptools>=65.5.0
-wheel>=0.38.0
+Pillow==11.0.0
+gunicorn==23.0.0
+# The next 3 lines are critical to fix the wheel error
+pip>=25.2
+setuptools>=75.0.0
+wheel>=0.45.0
