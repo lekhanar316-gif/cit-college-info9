@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Tied-up Companies</h2>
+{% for c in companies %}
+  <div>
+    <img src="{{ url_for('static', filename='images/companies/' + c.logo) }}" width="150">
+    <p>{{ c.name }}</p>
+  </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ college.Name if college else "College Website" }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <img src="{{ url_for('static', filename='images/logo.jpg') }}" height="80">
+    <h1>{{ college.Name if college else "Cauvery Institute of Technology" }}</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('college_info') }}">About</a>
+      <a href="{{ url_for('staff_index') }}">Staff</a>
+      <a href="{{ url_for('facilities_page') }}">Facilities</a>
+      <a href="{{ url_for('workshops_page') }}">Workshops</a>
+      <a href="{{ url_for('companies_page') }}">Companies</a>
+      <a href="{{ url_for('gallery_page') }}">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>© {{ college.Name if college else "CIT Mandya" }} | All Rights Reserved</p>
+  </footer>
+</body>
+</html>

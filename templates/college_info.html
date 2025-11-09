@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>About {{ college.Name }}</h2>
+<p><strong>Address:</strong> {{ college.Address }}</p>
+<p><strong>Established:</strong> {{ college.Established }}</p>
+<p><strong>Affiliation:</strong> {{ college.Affiliation }}</p>
+<p><strong>Accreditation:</strong> {{ college.Accreditation }}</p>
+<iframe width="560" height="315" src="{{ youtube_embed }}" frameborder="0" allowfullscreen></iframe>
+
+<h3>Facilities</h3>
+<ul>
+{% for f in facilities %}
+  <li><img src="{{ url_for('static', filename='images/facilities/' + f.image) }}" width="150"> {{ f.name }}</li>
+{% endfor %}
+</ul>
+
+<h3>Tied-up Companies</h3>
+<ul>
+{% for c in companies %}
+  <li><img src="{{ url_for('static', filename='images/companies/' + c.logo) }}" width="120"> {{ c.name }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

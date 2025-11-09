@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Our Facilities</h2>
+<div class="grid">
+{% for f in facilities %}
+  <div>
+    <img src="{{ url_for('static', filename='images/facilities/' + f.image) }}" width="200">
+    <h3>{{ f.name }}</h3>
+    <p>{{ f.description }}</p>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

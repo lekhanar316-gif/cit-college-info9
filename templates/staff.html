@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Departments</h2>
+<ul>
+{% for dept, members in departments.items() %}
+  <li><a href="{{ url_for('staff_department', dept=dept) }}">{{ dept }}</a> ({{ members|length }} Staff)</li>
+{% endfor %}
+</ul>
+{% endblock %}
